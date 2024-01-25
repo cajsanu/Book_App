@@ -1,0 +1,112 @@
+
+
+h1 {
+  text-align: center;
+  font-size: 3.2em;
+  line-height: 1.1;
+  padding-bottom: 10px;
+  color: #4eab98;
+  text-shadow: 2px 2px 8px #4eab987c;
+  transition: color 0.25s
+}
+
+h1:hover {
+  color: #0df5c7
+}
+
+h2 {
+  text-align: center;
+  color: #4eab9898;
+  text-shadow: 2px 2px 8px #2a5e547c;
+  transition: color 0.25s
+}
+
+h2:hover {
+  color: #0df5c788
+}
+
+h3 {
+  text-align: center;
+  color: #4eab986c;
+}
+
+.People {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+a {
+  font-weight: 500;
+  color: #7478cdbb;
+  text-decoration: inherit;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: #0df5c7ba;
+}
+
+p {
+  color: #accfe7b5;
+}
+
+.click {
+  padding: 10px;
+  display: none;
+}
+
+.Pic {
+  width: 120px;
+  height: 160px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: transform 0.6s ease;
+}
+
+.Cajsa:hover {
+  filter: drop-shadow(0 0 3em #e980e0aa);
+  
+  .Pic {
+    transform: scale(1.25);
+  }
+
+  .click {
+    display: block;
+  }
+}
+
+.Alex:hover {
+  filter: drop-shadow(0 0 3em #099fe4aa);
+
+  .Pic {
+    transform: scale(1.25);
+  }
+  .click {
+    display: block;
+  }
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #283939e8;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #4eab98;
+}
+
+/* button:focus,
+button:focus-visible {
+  /* outline: 4px auto -webkit-focus-ring-color; */
+/* } */ 

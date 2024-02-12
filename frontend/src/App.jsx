@@ -23,12 +23,12 @@ const AlexContent = ({ onClick }) => {
   )
 }
 
-const CajsaContent = ({ bookMap, onClick }) => {
+const CajsaContent = ({ bookMap, onBackClick, onInfoClick }) => {
   return (
     <>
       {Object.keys(bookMap).map((bookName) => <ShowContent book={bookName} score={bookMap[bookName]} key={bookName} />)}
-      < Button text="Back" onClick={onClick} />
-      
+      < Button text="Back" onClick={onBackClick} />
+      < Button text="Info about Cajsa" onClick={onInfoClick} />
     </>
   )
 }
@@ -45,15 +45,16 @@ function Button(props) {
 function Form(props) {
   return (
     <form >
-      
+
     </form>
-  
+
   )
 }
 
 function App() {
   const [showCajsaBooks, setShowCajsaBooks] = useState(false)
   const [showAlexBooks, setShowAlexBooks] = useState(false)
+  const [showInfo, setShowinfo] = useState(false)
 
   const cajsaBooks = {
     "The unbearable lightness of being": 4,
@@ -76,12 +77,32 @@ function App() {
     setShowAlexBooks(false);
   }
 
+  const handleInfoClick = () => {
+    setShowinfo(true)
+  }
+
+  const handleInfoBackClick = () => {
+    setShowinfo(false)
+  }
+
   if (showAlexBooks) {
     return <AlexContent onClick={handleBackClick} />
   }
 
   if (showCajsaBooks) {
-    return <CajsaContent bookMap={cajsaBooks} onClick={handleBackClick} />
+    return (
+      <div>
+        {showInfo === true ?
+          <div>
+            <p>
+              Information about the user:
+            </p>
+            <Button onClick={handleInfoBackClick} text={"Back"}/>
+          </div> :
+          <CajsaContent bookMap={cajsaBooks} onBackClick={handleBackClick} onInfoClick={handleInfoClick} />
+        }
+      </div>
+    )
   }
 
   return (
